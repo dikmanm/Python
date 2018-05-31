@@ -1,0 +1,17 @@
+sudo apt uptade
+sudo apt install swig
+Second, compile and install GEOS:
+
+cd /opt
+wget http://download.osgeo.org/geos/geos-3.3.3.tar.bz2
+tar xvjf geos-3.3.3.tar.bz2 
+cd geos-3.3.3
+mkdir build
+./configure --prefix=/opt/geos-3.3.3/build --enable-python
+make && sudo make install
+./build/bin/geos-config --version
+Finally, add GEOS in your PATH:
+
+# add lines below at the end of /etc/bash.bashrc file.
+export LD_LIBRARY_PATH="/opt/geos-3.3.3/build/lib:$LD_LIBRARY_PATH"
+export PATH="/opt/geos-3.3.3/build/bin:$PATH"
