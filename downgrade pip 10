@@ -1,0 +1,6 @@
+python -m pip uninstall pip
+python -m ensurepip
+
+apt remove --purge python-pip
+
+apt install pyhton-pip
